@@ -1,0 +1,52 @@
+{
+  "description": "MODO Dev Framework hooks — spec-first enforcement, lifecycle awareness, and quality gates",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/session-start.sh",
+            "timeout": 10,
+            "statusMessage": "Loading MODO Dev Framework..."
+          }
+        ]
+      },
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/post-compaction.sh",
+            "timeout": 5,
+            "statusMessage": "Recovering MODO Dev Framework context..."
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/prompt-interceptor.sh",
+            "timeout": 5,
+            "statusMessage": "Analyzing intent..."
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/tool-watcher.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

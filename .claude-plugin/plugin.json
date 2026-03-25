@@ -1,0 +1,22 @@
+{
+  "name": "modo-dev-framework",
+  "version": "1.0.0",
+  "description": "MODO collaborative development framework — shared rules, quality gates, architectural patterns, and multi-agent review system for the entire team",
+  "author": {
+    "name": "MODO Engineering",
+    "email": "engineering@modo.com.ar"
+  },
+  "homepage": "https://github.com/playsistemico/modo-dev-framework",
+  "repository": "https://github.com/playsistemico/modo-dev-framework",
+  "license": "MIT",
+  "keywords": [
+    "modo",
+    "development-framework",
+    "quality-gates",
+    "spec-first",
+    "code-review",
+    "multi-agent",
+    "dev-council",
+    "architecture"
+  ]
+}

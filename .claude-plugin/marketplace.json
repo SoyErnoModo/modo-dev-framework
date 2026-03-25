@@ -1,0 +1,22 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "modo-dev-framework",
+  "description": "MODO collaborative development framework — shared rules, quality gates, and multi-agent reviews for the entire engineering team",
+  "owner": {
+    "name": "MODO Engineering",
+    "email": "engineering@modo.com.ar"
+  },
+  "plugins": [
+    {
+      "name": "modo-dev-framework",
+      "description": "Complete development framework with spec-first enforcement, quality standards, dev-council reviews, and MODO architectural patterns",
+      "version": "1.0.0",
+      "author": {
+        "name": "MODO Engineering"
+      },
+      "source": ".",
+      "category": "development",
+      "homepage": "https://github.com/playsistemico/modo-dev-framework"
+    }
+  ]
+}
