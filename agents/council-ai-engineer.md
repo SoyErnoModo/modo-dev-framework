@@ -1,5 +1,6 @@
 ---
 name: council-ai-engineer
+tags: [council, ai, ml, cost-optimization]
 description: >
   Senior AI Engineer persona. Reviews from an AI/ML perspective: AI integration
   patterns, prompt engineering, model selection, cost optimization, hallucination

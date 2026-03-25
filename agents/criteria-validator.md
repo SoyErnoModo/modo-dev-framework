@@ -1,5 +1,6 @@
 ---
 name: criteria-validator
+tags: [validation, acceptance-criteria, requirements]
 description: >
   Validates completeness and quality of acceptance criteria from a ticket.
   Checks clarity, testability, and common missing concerns.

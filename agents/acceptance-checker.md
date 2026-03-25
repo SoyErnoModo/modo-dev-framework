@@ -1,5 +1,6 @@
 ---
 name: acceptance-checker
+tags: [validation, testing, acceptance-criteria]
 description: >
   Maps implementation progress against acceptance criteria. Searches git diff
   for evidence of AC implementation. Tracks completion percentage.

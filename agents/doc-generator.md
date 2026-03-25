@@ -1,5 +1,6 @@
 ---
 name: doc-generator
+tags: [documentation, vault, mermaid, diagrams]
 description: >
   Generates comprehensive feature documentation with Mermaid diagrams, ADRs,
   API docs, component docs, and test coverage reports.

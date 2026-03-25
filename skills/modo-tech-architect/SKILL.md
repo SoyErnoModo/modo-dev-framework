@@ -6,6 +6,7 @@ description: >
   Use when: (1) Starting a new MODO project from a PRD, (2) Analyzing technical feasibility of features, (3) Creating technical specs and implementation plans, (4) Identifying reusable MODO components and APIs, (5) Generating consolidated technical documentation.
 
   Triggers: analyze this PRD, create tech specs for, implementation plan for, what MODO APIs/components exist for.
+tags: [architecture, prd, tech-spec, planning, swagger]
 ---
 
 # MODO Technical Architect

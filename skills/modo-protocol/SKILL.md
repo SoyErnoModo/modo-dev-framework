@@ -8,6 +8,7 @@ description: >
   This protocol ensures: (1) No code without a plan, (2) Feature lifecycle tracking,
   (3) Quality standards enforcement, (4) MODO architectural pattern compliance,
   (5) Documentation discipline across all development work.
+tags: [core, protocol, spec-first, lifecycle, enforcement]
 license: MIT
 metadata:
   author: MODO Engineering

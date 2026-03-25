@@ -1,5 +1,6 @@
 ---
 name: security-reviewer
+tags: [guardia, security, owasp, vulnerabilities]
 description: Reviews code for OWASP Top 10 frontend vulnerabilities, secrets exposure, and auth issues
 model: sonnet
 ---

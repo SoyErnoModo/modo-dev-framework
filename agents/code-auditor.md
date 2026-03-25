@@ -1,5 +1,6 @@
 ---
 name: code-auditor
+tags: [review, quality, code-smells, complexity]
 description: >
   In-progress code quality auditor. Analyzes git diff for quality issues
   using SonarQube rules, React patterns, security checks, and test coverage.

@@ -1,7 +1,7 @@
 {
   "name": "modo-dev-framework",
-  "version": "1.0.0",
-  "description": "MODO collaborative development framework — shared rules, quality gates, architectural patterns, and multi-agent review system for the entire team",
+  "version": "1.1.0",
+  "description": "MODO collaborative development framework with MCP server — shared rules, quality gates, prompt library, granular instructions, tag-based search, and multi-agent review system",
   "author": {
     "name": "MODO Engineering",
     "email": "engineering@modo.com.ar"

@@ -1,5 +1,6 @@
 ---
 name: council-team-lead
+tags: [council, code-quality, conventions, team]
 description: >
   Team Lead persona. Reviews code from an engineering excellence perspective:
   code readability, team conventions, PR reviewability, knowledge sharing,

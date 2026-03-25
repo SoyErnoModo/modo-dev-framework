@@ -1,5 +1,6 @@
 ---
 name: solution-critic
+tags: [review, architecture, design-patterns]
 description: >
   Deep architectural and approach reviewer. Analyzes whether the implementation
   is the right approach, reviews patterns, checks edge cases, suggests alternatives.

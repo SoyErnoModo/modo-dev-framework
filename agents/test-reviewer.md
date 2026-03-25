@@ -1,5 +1,6 @@
 ---
 name: test-reviewer
+tags: [guardia, testing, coverage, jest]
 description: Reviews test quality, coverage, and identifies missing tests for changed code
 model: sonnet
 ---

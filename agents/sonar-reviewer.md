@@ -1,5 +1,6 @@
 ---
 name: sonar-reviewer
+tags: [guardia, sonarcloud, quality, code-smells]
 description: Validates SonarCloud quality gate, code smells, bugs, and vulnerabilities for a PR
 model: sonnet
 ---

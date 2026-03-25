@@ -4,6 +4,7 @@ description: >
   Code review quality standards and checklist used by all MODO review agents.
   Auto-loaded when running /guardia or /dev-council. Defines severity classification,
   tech stack awareness, and report quality requirements.
+tags: [review, standards, guardia, code-quality, severity]
 license: MIT
 metadata:
   author: MODO Engineering

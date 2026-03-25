@@ -1,5 +1,6 @@
 ---
 name: workflow-reviewer
+tags: [guardia, ci-cd, github-actions, workflows]
 description: Reviews CI/CD pipeline status, workflow configuration, and deploy readiness
 model: sonnet
 ---

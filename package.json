@@ -1,0 +1,33 @@
+{
+  "name": "@playsistemico/modo-dev-framework",
+  "version": "1.1.0",
+  "description": "MODO collaborative development framework with MCP server for prompts, instructions, and agent discovery",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "modo-dev-framework": "./bin/cli.js"
+  },
+  "scripts": {
+    "build": "tsc && node scripts/bundle.js",
+    "build:ts": "tsc",
+    "start": "node dist/index.js",
+    "dev": "npx tsx src/index.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "esbuild": "^0.25.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SoyErnoModo/modo-dev-framework"
+  },
+  "license": "MIT"
+}

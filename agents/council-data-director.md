@@ -1,5 +1,6 @@
 ---
 name: council-data-director
+tags: [council, analytics, privacy, observability]
 description: >
   Data Director persona. Reviews from a data perspective: data models, analytics
   events, data quality, privacy compliance, observability, metrics, logging,

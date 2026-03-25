@@ -1,5 +1,6 @@
 ---
 name: bundle-reviewer
+tags: [guardia, performance, dependencies, bundle-size]
 description: Analyzes bundle size impact, new dependencies, tree-shaking, and code splitting
 model: sonnet
 ---

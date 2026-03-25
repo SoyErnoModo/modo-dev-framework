@@ -1,5 +1,6 @@
 ---
 name: react-reviewer
+tags: [guardia, react, frontend, components]
 description: Reviews React code for performance, correctness, and architecture issues using react-doctor and manual analysis
 model: sonnet
 ---

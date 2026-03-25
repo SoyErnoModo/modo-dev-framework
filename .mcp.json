@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "modo-dev-framework": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/dist/index.js"],
+      "env": {
+        "MCP_PROMPTS_DIR": "${CLAUDE_PLUGIN_ROOT}/prompts",
+        "MCP_INSTRUCTIONS_DIR": "${CLAUDE_PLUGIN_ROOT}/instructions",
+        "MCP_AGENTS_DIR": "${CLAUDE_PLUGIN_ROOT}/agents",
+        "MCP_SKILLS_DIR": "${CLAUDE_PLUGIN_ROOT}/skills"
+      }
+    }
+  }
+}
