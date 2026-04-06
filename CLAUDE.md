@@ -57,6 +57,29 @@
 - **No Laziness**: Find root causes. No temporary fixes. Senior developer standards.
 - **Minimal Impact**: Changes should only touch what's necessary. Avoid introducing bugs.
 
+## Boost Keywords
+
+Use these words anywhere in your prompt to activate enhanced behaviors:
+
+| Keyword | Aliases | Effect |
+|---------|---------|--------|
+| **deep** | profundo, exhaustivo, a fondo | Exhaustive multi-source analysis with evidence |
+| **parallel** | paralelo, en paralelo | Concurrent agent orchestration, batch tool calls |
+| **review** | revisar, audit (+ code/pr/security) | Structured 7-point code review protocol |
+| **ultrathink** | pensá bien, think hard | Extended reasoning with trade-off analysis |
+| **quick** | rápido, fast, tldr | Minimal output, skip ceremony |
+
+Keywords are auto-detected — just include them naturally in your prompt.
+
+## Completion Enforcement
+
+On session stop, the framework automatically checks:
+- Uncommitted git changes
+- Unpushed commits
+- Failing tests or build errors
+
+If issues are found, you'll get a reminder before the session ends.
+
 ---
 
 ## MODO Framework Commands

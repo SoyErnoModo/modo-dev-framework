@@ -1,5 +1,5 @@
 {
-  "description": "MODO Dev Framework hooks — spec-first enforcement, lifecycle awareness, and quality gates",
+  "description": "MODO Dev Framework hooks — spec-first enforcement, magic keywords, session metrics, continuation enforcement, and quality gates",
   "hooks": {
     "SessionStart": [
       {
@@ -33,6 +33,11 @@
             "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/prompt-interceptor.sh",
             "timeout": 5,
             "statusMessage": "Analyzing intent..."
+          },
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/magic-keywords.sh",
+            "timeout": 3
           }
         ]
       }
@@ -44,6 +49,28 @@
             "type": "command",
             "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/tool-watcher.sh",
             "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/session-metrics.sh",
+            "timeout": 2
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/continuation-check.sh",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/session-cleanup.sh",
+            "timeout": 3,
+            "async": true
           }
         ]
       }
