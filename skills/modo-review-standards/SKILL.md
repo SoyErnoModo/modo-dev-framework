@@ -1,17 +1,9 @@
 ---
-name: modo-review-standards
-description: >
-  Code review quality standards and checklist used by all MODO review agents.
-  Auto-loaded when running /guardia or /dev-council. Defines severity classification,
-  tech stack awareness, and report quality requirements.
-tags: [review, standards, guardia, code-quality, severity]
-license: MIT
-metadata:
-  author: MODO Engineering
-  version: 1.0.0
+name: review-standards
+description: PR review quality standards and checklist used by Code Guardian agents. Auto-loaded when running /guardia.
 ---
 
-# MODO Review Standards
+# Code Guardian Review Standards
 
 ## Review Philosophy
 
@@ -20,6 +12,16 @@ metadata:
 3. **Be proportional**: Minor style issues are suggestions, not blockers
 4. **Be fair**: Acknowledge what the PR does well
 5. **Be fast**: Prefer parallel analysis over sequential
+
+## PR Metadata Standards (checked before code review)
+
+- Title: `type(SCOPE-XXX): description` (e.g. `feat(EXA-123): add ads page`)
+- Description: filled, not template `[Change!]` placeholders
+- Evidence: screenshots/videos for visual changes (desktop 1280x800 + mobile 375x812)
+- JIRA ticket linked
+- Checklist items marked
+- Branch name follows convention
+- If >1000 lines or mixed concerns: suggest fragmentation
 
 ## Severity Classification
 
@@ -30,6 +32,7 @@ metadata:
 - SonarCloud quality gate failures
 - Missing tests for critical business logic
 - Breaking changes without migration path
+- Hardcoded credentials or API keys in code
 
 ### Warning (should fix)
 - Code smells (cognitive complexity, duplication)
@@ -45,20 +48,32 @@ metadata:
 - Documentation improvements
 - Performance micro-optimizations
 
+## MODO-Specific Rules
+
+- Use `globalThis` over `window`/`global` (ESLint unicorn)
+- No `alt=""` — use descriptive alt text on all images
+- No CSS modules in Tailwind projects — follow the primary styling system
+- Use design system tokens from `modo-ui-lib-web`, not hardcoded hex colors
+- Credentials must be env vars (`NEXT_PUBLIC_*` for client, server-only otherwise)
+- No `console.log/error/warn` in production (use logger or remove)
+- Scripts: use `next/script` not `document.createElement('script')`
+- SSR: guard all `window`/`document` access with `typeof window !== 'undefined'`
+
 ## Tech Stack Awareness
 
-### Next.js App Router
+### modo-landing (Next.js 12 Pages Router)
+- `getServerSideProps` for SSR data
+- `<Head>` with title, description, canonical on every page
+- Storyblok CMS for content pages via `[[...slug]].jsx`
+- Redux Toolkit for global state, React Context for scoped features
+- Styled Components + Tailwind coexist (migrating to Tailwind-only)
+- `@playsistemico/modo-ui-lib-web` for design system components
+
+### promos-hub-site (Next.js 15 App Router)
 - Server vs Client component boundaries
-- Metadata and SEO
+- Metadata API for SEO
 - Route handlers and server actions
 - Streaming and Suspense
-- Image and font optimization
-
-### Zustand State Management
-- Store design (avoid god stores)
-- Selector optimization
-- Middleware usage
-- DevTools integration
 
 ### Testing with Jest + Testing Library
 - Behavior-driven tests over implementation tests
@@ -74,7 +89,7 @@ metadata:
 
 ## Report Quality Checklist
 
-Before finalizing a review report, verify:
+Before finalizing a Code Guardian report, verify:
 
 - [ ] Every finding has a file:line reference
 - [ ] Every blocker has a concrete fix suggestion

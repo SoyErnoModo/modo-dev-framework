@@ -1,5 +1,22 @@
 # MODO Dev Framework
 
+> Source of truth: https://github.com/SoyErnoModo/modo-dev-framework
+
+## Agent Communication
+
+- Sub-agents (guardia reviewers, dev-council, etc.) use **caveman mode** for inter-agent responses (no filler, compressed, technical substance only)
+- User-facing output is normal prose
+- This repo is the **source of truth** for all cross-project skills, commands, and standards
+- Project-specific skills stay in `{project}/.claude/skills/`
+
+## External Tool References
+
+| Tool | Source | Purpose |
+|------|--------|---------|
+| Caveman | `JuliusBrussee/caveman` | Compressed agent-to-agent communication (~75% token savings) |
+
+**Rule**: reference external tools, never copy their content into skills.
+
 ## Workflow Orchestration
 
 ### 1. Plan Mode Default

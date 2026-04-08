@@ -40,12 +40,36 @@ Categorize the changed files into:
 
 This classification determines which agents to run. Skip agents whose file categories have no changes.
 
+## Step 1.5: PR Metadata & Standards Review (inline, no sub-agent)
+
+Before launching sub-agents, check PR metadata directly:
+
+```bash
+gh pr view <N> --json title,body --jq '{title: .title, body: .body}'
+```
+
+Validate:
+- **Title**: follows `type(SCOPE-XXX): description` convention
+- **Description**: not template placeholders (`[Change!]`)
+- **Evidence**: screenshots/videos present for visual changes
+- **JIRA**: ticket linked
+- **Checklist**: items marked
+- **Branch name**: follows convention
+
+Also check for PR fragmentation opportunity:
+- If >1000 added lines with distinct functional boundaries, suggest splitting
+- If PR mixes infrastructure + feature code, suggest splitting
+
+Include findings in the final report under "PR Standards" section.
+
 ## Step 2: Launch sub-agents IN PARALLEL
 
 Launch ALL applicable agents simultaneously using the Agent tool. Each agent must receive:
 1. The PR number
 2. The list of changed files (filtered to their domain)
 3. The base branch name
+
+**EFFICIENCY**: Include this instruction in every sub-agent prompt: "Respond in caveman mode (compressed, no filler, technical substance only). Use format: SCORE: N, then bullet findings with file:line refs."
 
 Launch these agents (skip if no relevant files changed):
 
@@ -115,6 +139,7 @@ After ALL agents return, compile a unified report in this exact format:
 
 | Dimension | Score | Status |
 |-----------|-------|--------|
+| PR Standards | <0-100> | <pass/fail> |
 | SonarCloud | <0-100> | <pass/fail> |
 | Tests & Coverage | <0-100> | <pass/fail> |
 | React Health | <0-100> | <pass/fail> |
@@ -168,7 +193,7 @@ After ALL agents return, compile a unified report in this exact format:
 - **50-69**: Needs attention, has warnings
 - **0-49**: Blockers found, must fix
 
-**Weighted average**: SonarCloud 20%, Tests 25%, React 20%, Security 20%, CI/CD 10%, Bundle 5%
+**Weighted average**: PR Standards 10%, SonarCloud 15%, Tests 25%, React 20%, Security 15%, CI/CD 10%, Bundle 5%
 
 **Verdict rules**:
 - Overall >= 80 AND no blockers -> `APPROVE`
